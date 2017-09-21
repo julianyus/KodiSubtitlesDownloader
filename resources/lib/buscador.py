@@ -40,7 +40,7 @@ class Buscador:
 	def ObtenerSeriesCoincidentes(self, nombreSerie):
 		response = urllib2.urlopen(self.urlRoot + "series.php")
 		soup = BeautifulSoup(response, 'html.parser')
-		seriesCoincidentes = soup.find_all('a', text=nombreSerie)
+		seriesCoincidentes = soup.find_all('a', text= re.compile(r''+nombreSerie))
 		return seriesCoincidentes
 	def esFilaVersion(self, fila):
 		imagenVersion = fila.find('img')
@@ -72,6 +72,14 @@ class Buscador:
 							#print(celdasIdioma[0])
 						siguienteFila = siguienteFila.find_next_sibling("tr")
 		return capitulo
+	def DescargarCapitulo(self, url, path):
+		opener = urllib2.build_opener()
+		opener.addheaders = [('Referer', 'https://www.tusubtitulo.com/ajax_loadShow.php?show=2026&season=4')]
+		response3 = opener.open(url)
+		#response3 = urllib2.urlopen(url)
+		with open(path,'wb') as output:
+  			output.write(response3.read())
+		log("rrrr", "descargado")
 
 def log(module, msg):
   xbmc.log((u"### [%s] - %s" % (module,msg,)).encode('utf-8'),level=xbmc.LOGERROR ) 
