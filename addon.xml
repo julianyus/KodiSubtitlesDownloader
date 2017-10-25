@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="service.subtitles.subtitulosjulian"
-       name="Subtitulos Julian"
+<addon id="service.subtitles.tusubtitulo"
+       name="Tusubtitulo.com"
        version="0.0.1"
-       provider-name="amet, subtitulosjulian">
+       provider-name="amet, tusubtitulo">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
   <extension point="xbmc.subtitle.module"
              library="service.py" />
   <extension point="xbmc.addon.metadata">
-    <summary>Subtitulos Julian</summary>
-    <description lang="en">blblbl</description>
+    <summary>Subtitulos de tusubtitulo.com</summary>
+    <description lang="en">Addon para descragar subtitulos de la web tusubtitulo.com</description>
     <platform>all</platform>
 	<language></language>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
     <email>bababa [at] julian {dot} org</email>                                               
-    <source>https://github.com/opensubtitles/service.subtitles.opensubtitles</source>    
+    <source>https://github.com/julianyus/KodiSubtitlesDownloader</source>    
   </extension>
 </addon>
